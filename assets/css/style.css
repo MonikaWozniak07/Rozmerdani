@@ -76,12 +76,6 @@ img {
 
 /* styles */
 
-/*
-paddingi gora i dol
-- 50px,
-- 100px;
-*/
-
 .container {
     width: 100%;
     padding-right: 1rem;
@@ -89,18 +83,9 @@ paddingi gora i dol
     margin-right: auto;
     margin-left: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
     .container {
-        max-width: 720px;
-    }
-}
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
-}
-@media (min-width: 1600px) {
-    .container {
+        width: 85%;
         max-width: 1560px;
     }
 }

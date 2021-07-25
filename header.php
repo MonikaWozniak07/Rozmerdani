@@ -16,6 +16,7 @@
         <?php } ?>
 
     </title>
+    
     <?php wp_head(); ?>
 </head>
 
