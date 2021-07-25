@@ -14,9 +14,7 @@
         <?php if ( get_bloginfo('description') ) { ?>
             | <?php bloginfo( 'description' ); ?>
         <?php } ?>
-
     </title>
-    
     <?php wp_head(); ?>
 </head>
 

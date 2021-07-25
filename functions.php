@@ -17,11 +17,9 @@ add_action( 'wp_enqueue_scripts', 'styles_scripts' );
 /* Register navigation menus.
  */
 function customtheme_menus() {
-
 	$locations = array(
 		'primary'     => __( 'Primary Menu' ),
 	);
-
 	register_nav_menus( $locations );
 }
 
