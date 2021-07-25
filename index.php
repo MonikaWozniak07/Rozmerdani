@@ -6,6 +6,10 @@
 
 <?php get_header(); ?>
 
-index.php
+<section>
+    <div class="container">
+        index.php
+    </div>
+</section>
 
 <?php get_footer(); ?>

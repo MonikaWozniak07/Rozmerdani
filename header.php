@@ -22,9 +22,11 @@
 <body>
     <?php wp_body_open(); ?>
     <header>
-        <a href="<?php echo get_site_url(); ?>" class="navbar-brand">Logo</a>
-        <div>header.php</div>
-        <nav>
-            <?php wp_nav_menu( $args ); ?>
-        </nav>
+        <div class="container">
+            <a href="<?php echo get_site_url(); ?>" class="navbar-brand">Logo</a>
+            <div>header.php</div>
+            <nav>
+                <?php wp_nav_menu( $args ); ?>
+            </nav>
+        </div>
     </header>
