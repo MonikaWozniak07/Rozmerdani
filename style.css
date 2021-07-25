@@ -1,6 +1,114 @@
 /*
     Theme Name:     Stowarzyszenie Rozmerdany Dwór
-    Description:    Szablon WordPress stworzony dla i na potrzeby Stowarzyszenia Rozmeredany Dwór.
+    Description:    Szablon WordPress stworzony dla i na potrzeby Stowarzyszenia Rozmerdany Dwór.
     Author:         Monika Woźniak, Łukasz Dzieło
     Version:        0.1
 */
+
+:root {
+    --main-bcg:#C0A743;
+    --main-font:#212121;
+    --margin:195px;
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+    color: var(--main-font);
+    cursor: default;
+}
+
+/* nav */
+nav {
+    width: 100%;
+}
+
+.nav-gold {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    background-color:var(--main-bcg);
+    color:#fff;
+    padding: 10px 0;
+    line-height: 19px;
+}
+.nav-gold > * {
+    margin: 0 var(--margin);
+    font-size: 12px;
+}
+.nav-gold_links a {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-gold_links a:nth-of-type(2){
+    margin-left:20px;
+}
+.nav-gold_links a:hover {
+    color: var(--main-font);
+}
+
+.nav-white {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 var(--margin);
+    padding: 10px 0;
+}
+.nav-logo {
+    width: 326px;
+    height: 130px;
+}
+.nav-white ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    list-style: none;
+}
+.nav-white ul li {
+    font-size: 20px;
+    margin-left: 10px;
+}
+.nav-white ul li a {
+    color:var(--main-font);
+    text-decoration: none;
+}
+@media(max-width:1024px) {
+    .nav-gold > * {
+        margin:5px ;
+    }
+    .nav-gold, .nav-gold_links {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-white {
+        display: none;
+    }
+}
+
+/* header */
+header {
+    width: 100%;
+    height:70vh;
+}
+.header-banner_img, .header-banner_circle {
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+}
+.header-banner_img{
+    background-image: url("./img/friends-1149841_1920\ 1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.header-banner_circle {
+    position: absolute;
+    background-image: url("./img/Ellipse\ 1.png");
+    z-index: 1;
+}
