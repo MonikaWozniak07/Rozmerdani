@@ -1,11 +1,11 @@
 /* base styles */
 
 :root {
-  --primary:    #C0A743;
-  --white:      #FFFFFF;
-  --dark:       #212121;
-  --black:      #000000;
-  --sans-serif:    'Open Sans', sans-serif;
+    --primary:    #C0A743;
+    --white:      #FFFFFF;
+    --gray-900:   #212121;
+    --black:      #000000;
+    --sans-serif:    'Open Sans', sans-serif;
 }
 
 *,
