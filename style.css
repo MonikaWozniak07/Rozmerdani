@@ -96,7 +96,7 @@ nav {
 }
 
 /* header */
-header {
+/* header {
     width: 100%;
     height:400px;
     overflow:hidden;
@@ -140,7 +140,7 @@ header {
     .header-banner_title {
         margin-top:30px;
     }
-}
+} */
 /* section */
 .white {
     display: flex;
