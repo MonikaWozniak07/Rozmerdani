@@ -376,8 +376,9 @@ nav ul li a:hover, .nav-hamburger:hover {
             flex-direction: column;
     border-radius: 0px;
   }
-  .white-img, .grey-img {
+  .white img, .grey img {
     margin: 0 auto;
+    max-width: 80vw;
   }
   .white p, .grey p {
     padding: 10px;
