@@ -115,7 +115,7 @@ header {
     line-height: 19px;
 }
 .header-gold > * {
-    margin:0 10%;
+    // margin:0 10%;
     font-size: 12px;
 }
 .header-gold_links a {
@@ -139,18 +139,18 @@ nav {
     padding: 10px 0;
     z-index: 9;
 }
-
+nav > * {
+    padding: 10px;
+}
 .nav-logo {
-    width: 326px;
-    height: 130px;
-    margin-left: 10%;
+    max-width: 326px;
+    max-height: 130px;
 }
 nav ul {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     list-style: none;
-    margin-right: 10%;
 }
 nav ul li {
     font-size: 20px;
@@ -159,6 +159,8 @@ nav ul li {
 nav ul li a {
     color:var(--gray-900);
     text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
 }
 
 .nav-hamburger{
@@ -169,6 +171,7 @@ nav ul li a {
 nav ul li a:hover, .nav-hamburger:hover{
     color:var(--primary)
 }
+
 @media(min-width:1024px) {
     nav{
         height: 160px;
@@ -238,6 +241,8 @@ nav ul li a:hover, .nav-hamburger:hover{
 @media(max-width:1024px){
     .banner_title {
         margin-left: 20px;
+        font-size: 36px;
+        line-height: 56px;
     }
     .banner_circle {
         width:100%;
