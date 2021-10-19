@@ -373,7 +373,7 @@ img {
   }
 }
 
-@media (max-width: 899px) {
+@media (max-width: calc(900px - 1px)) {
   .grid .grid-image.mobile-sm img {
     display: block;
     margin: 0 auto;

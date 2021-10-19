@@ -1,9 +1,11 @@
 /* base styles */
 
 $sm-min: 480px;
-$sm-max: 899px;
 $lg-min: 900px;
 $xl-min: 1200px;
+
+$sm-max: calc(#{$lg-min} - 1px);
+$lg-max: calc(#{$xl-min} - 1px);
 
 :root {
     --primary: #c0a743;
