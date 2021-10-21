@@ -533,8 +533,22 @@ header nav {
   }
 }
 
-header nav ul {
+header nav .menu-mainmenu-container {
   display: none;
+}
+
+@media (min-width: 900px) {
+  header nav .menu-mainmenu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -543,14 +557,6 @@ header nav ul {
   -ms-flex-line-pack: center;
       align-content: center;
   list-style: none;
-}
-
-@media (min-width: 900px) {
-  header nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 header nav ul li {
