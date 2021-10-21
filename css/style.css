@@ -422,6 +422,13 @@ header .header-gold {
 
 header .header-gold_account {
   font-family: var(--sans-serif) !important;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 900px) {
+  header .header-gold_account {
+    margin-bottom: 0;
+  }
 }
 
 header .header-gold_links {
@@ -448,19 +455,17 @@ header .header-gold_links {
 }
 
 header .header-gold_links a {
-  margin-top: 5px;
   text-decoration: none;
   color: #fff;
 }
 
-@media (min-width: 900px) {
-  header .header-gold_links a {
-    margin-top: 0;
-  }
+header .header-gold_links a + a {
+  margin-top: 5px;
 }
 
 @media (min-width: 900px) {
   header .header-gold_links a + a {
+    margin-top: 0;
     margin-left: 20px;
   }
 }
@@ -576,6 +581,11 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
+  color: var(--primary);
+}
+
+header nav ul .current-menu-item a,
+header nav ul .current_page_item a {
   color: var(--primary);
 }
 

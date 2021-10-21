@@ -6,15 +6,26 @@
 
 <?php get_header(); ?>
 
-<section class="banner banner-lg pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(./img/banner-stronaglowna.jpg);">
+<section class="banner banner-lg pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/banner-stronaglowna.jpg);">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
+            <?php if( is_front_page() && ! is_home() ) { ?>
             <h1><span>Psy i koty</span><br>Zaadoptuj<br>dowolne zwierzę!</h1>
+            <?php } else { ?>
+            <?php single_post_title( '<h1>', '</h1>' ); ?>
+            <?php } ?>
         </div>
     </div>
 </section>
 
+<section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
+    <div class="container">
+        index.php
+    </div>
+</section>
+
+<?php /*
 <section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
     <div class="container">
         <div class="grid grid-1_1">
@@ -23,10 +34,10 @@
                 <p>Aliquam ullamcorper leo elementum sem euismod, ornare dapibus massa feugiat. Nullam quis porttitor lorem, ac consectetur nisl. Fusce consequat euismod nunc, nec efficitur ante tincidunt non. Mauris vulputate varius nunc, id elementum dui fringilla fermentum. In sed tincidunt urna. Etiam sodales tellus vel venenatis tristique. Nam risus odio, viverra a convallis at, volutpat nec metus.</p>
             </div>
             <div class="grid-image order-tablet-1 justify-self-center mobile-sm">
-                <img src="./img/img1.jpg" alt="british-cat">
-            </div>
-        </div>
-    </div>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img1.jpg" alt="british-cat">
+</div>
+</div>
+</div>
 </section>
 
 <section class="section-help mt-50 mt-lg-100">
@@ -41,7 +52,7 @@
                     <a href="/" class="btn">Czytaj więcej</a>
                 </div>
                 <div class="grid-image order-tablet-1">
-                    <img src="./img/img2.jpg" alt="little-dog">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/img2.jpg" alt="little-dog">
                 </div>
             </div>
         </div>
@@ -57,10 +68,11 @@
                 <p>Aliquam ullamcorper leo elementum sem euismod, ornare dapibus massa feugiat. Nullam quis porttitor lorem, ac consectetur nisl. Fusce consequat euismod nunc, nec efficitur ante tincidunt non. Mauris vulputate varius nunc, id elementum dui fringilla fermentum. In sed tincidunt urna. Etiam sodales tellus vel venenatis tristique. Nam risus odio, viverra a convallis at, volutpat nec metus.</p>
             </div>
             <div class="grid-image align-self-end justify-self-center mobile-sm">
-                <img src="./img/img3.jpg" alt="dog-cat">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img3.jpg" alt="dog-cat">
             </div>
         </div>
     </div>
 </section>
+*/ ?>
 
 <?php get_footer(); ?>

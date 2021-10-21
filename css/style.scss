@@ -417,6 +417,10 @@ header {
         }
         &_account {
             font-family: var(--sans-serif) !important;
+            margin-bottom: 5px;
+            @media (min-width: $lg-min) {
+                margin-bottom: 0;
+            }
         }
         &_links {
             display: flex;
@@ -427,14 +431,12 @@ header {
                 margin-left: auto;
             }
             a {
-                margin-top: 5px;
                 text-decoration: none;
                 color: #fff;
-                @media (min-width: $lg-min) {
-                    margin-top: 0;
-                }
                 + a {
+                    margin-top: 5px;
                     @media (min-width: $lg-min) {
+                        margin-top: 0;
                         margin-left: 20px;
                     }
                 }
@@ -502,6 +504,12 @@ header {
                     &:hover {
                         color: var(--primary);
                     }
+                }
+            }
+            .current-menu-item,
+            .current_page_item {
+                a {
+                    color: var(--primary);
                 }
             }
         }

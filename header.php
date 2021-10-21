@@ -16,24 +16,11 @@
         <?php } ?>
     </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-    <link rel="icon" href="./img/favicon.ico" />
     <?php wp_head(); ?>
 </head>
 
 <body>
     <?php wp_body_open(); ?>
-
-    <?php /*
-        <header>
-            <div class="container">
-                <a href="<?php echo get_site_url(); ?>" class="navbar-brand">Logo</a>
-    <div>header.php</div>
-    <nav>
-        <?php wp_nav_menu( $args ); ?>
-    </nav>
-    </div>
-    </header>
-    */ ?>
 
     <header>
         <div class="header-gold">
@@ -52,30 +39,13 @@
 
         <div class="container">
             <nav>
-                <a href="./">
-                    <img class="nav-logo" src="./img/logo.png" alt="logo">
+                <a href="<?php echo get_site_url(); ?>">
+                    <img class="nav-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
                 </a>
                 <div class="nav-hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
                 <?php wp_nav_menu( $args ); ?>
-                <?php /*
-                <ul>
-                    <li><a href="/">Nasz Team</a></li>
-                    <li><a href="/">Rozmerdani</a></li>
-                    <li><a href="pomagaj.html">Pomagaj</a></li>
-                    <!-- <li><a href="/">Aktualności</a></li> -->
-                    <!-- <li><a href="/">Nasi podopieczni</a></li> -->
-                    <!-- <li><a href="/">Dobroczyńcy</a></li> -->
-                    <!-- <li><a href="/">O stowarzyszeniu</a></li> -->
-                    <!-- <li><a href="/">Dobrane pary</a></li> -->
-                    <!-- <li><a href="/">Dobroczyńcy</a></li> -->
-                    <!-- <li><a href="/">O stowarzyszeniu</a></li> -->
-                    <!-- <li><a href="/">Pomóż</a></li> -->
-                    <li><a href="/">Kontakt</a></li>
-                    <!-- <li><a href="/">Zaloguj się</a></li> -->
-                </ul>
-                */ ?>
             </nav>
         </div>
 
