@@ -1,3 +1,10 @@
+@charset "UTF-8";
+/*
+    Theme Name:     Stowarzyszenie Rozmerdany Dwór
+    Description:    WordPress stworzony dla Stowarzyszenia Rozmerdany Dwór.
+    Author:         Monika Woźniak, Łukasz Dzieło
+    Version:        0.1
+*/
 /* base styles */
 :root {
   --primary: #c0a743;
