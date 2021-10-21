@@ -19,7 +19,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
     <header>
@@ -45,7 +45,7 @@
                 <div class="nav-hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
-                <?php wp_nav_menu( $args ); ?>
+                <?php wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) ); ?>
             </nav>
         </div>
 

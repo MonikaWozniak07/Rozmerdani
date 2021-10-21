@@ -480,36 +480,37 @@ header {
         @media (min-width: $lg-min) {
             padding: 30px 0;
         }
-        .menu-mainmenu-container {
+        .main-nav {
             display: none;
             @media (min-width: $lg-min) {
                 display: flex;
             }
-        }
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            align-content: center;
-            list-style: none;
-            li {
-                margin-left: 15px;
-                @media (min-width: $xl-min) {
-                    margin-left: 30px;
-                }
-                a {
-                    color: var(--gray-900);
-                    text-decoration: none;
-                    font-size: 18px;
-                    &:hover {
-                        color: var(--primary);
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                align-content: center;
+                list-style: none;
+                li {
+                    margin-left: 15px;
+                    @media (min-width: $xl-min) {
+                        margin-left: 30px;
+                    }
+                    a {
+                        color: var(--gray-900);
+                        text-decoration: none;
+                        font-size: 18px;
+                        &:hover {
+                            color: var(--primary);
+                        }
                     }
                 }
-            }
-            .current-menu-item,
-            .current_page_item {
-                a {
-                    color: var(--primary);
+                .current_page_parent,
+                .current-menu-item,
+                .current_page_item {
+                    a {
+                        color: var(--primary);
+                    }
                 }
             }
         }

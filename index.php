@@ -1,6 +1,11 @@
 <?php
 /**
- * The main index file
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
  */
 ?>
 
@@ -19,11 +24,47 @@
     </div>
 </section>
 
-<section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
+<?php /*
+<section>
     <div class="container">
-        index.php
-    </div>
+        <?php while ( have_posts() ) : the_post(); //Open the loop ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    index.php
+
+    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+    <section class="entry-meta">
+        <?php echo get_the_date(); ?>
+    </section><!-- .entry-meta -->
+
+    <section class="entry-content">
+        <?php the_content(); ?>
+    </section><!-- .entry-content -->
+
+</article>
+
+<?php endwhile; // End the loop. ?>
+</div>
 </section>
+*/ ?>
+
+<?php
+if ( have_posts() ) {
+
+	// Load posts loop.
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'template-parts/content');
+	}
+
+} else {
+
+	// If no content, include the "No posts found" template.
+	get_template_part( 'template-parts/content-none' );
+
+} ?>
 
 <?php /*
 <section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
