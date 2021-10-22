@@ -4,6 +4,15 @@
  */
 ?>
 
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/banner-rozmerdani.jpg);">
+    <div class="container">
+        <div class="banner_title">
+            <div class="banner_circle"></div>
+            <h1>404</h1>
+        </div>
+    </div>
+</section>
+
 <div class="container">
 
     template-parts/content-none.php

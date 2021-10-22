@@ -45,4 +45,8 @@ add_filter( 'the_content',  'spojniki' );
 add_filter( 'the_title',    'spojniki' );
 add_filter( 'comment_text', 'spojniki' );
 
-
+// Featured Image for every page
+add_theme_support( 'post-thumbnails' );
+if ( function_exists( 'add_theme_support' ) ) {
+    add_image_size( 'banner', 1920, 600, array( 'center', 'center' ) );
+ }

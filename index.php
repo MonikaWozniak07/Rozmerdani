@@ -11,7 +11,20 @@
 
 <?php get_header(); ?>
 
-<section class="banner banner-lg pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/banner-stronaglowna.jpg);">
+<div>
+    <?php
+    if ( has_post_thumbnail() ) {
+        echo get_the_post_thumbnail_url($post->ID, 'banner');
+    }
+    else {
+        echo get_the_post_thumbnail_url(get_option('page_on_front'), 'banner');
+    }
+    ?>
+</div>
+
+<section class="banner pt-50 pb-50 pt-lg-100 pb-lg-100" style="
+    background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'banner') ?>)
+    ">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
@@ -23,6 +36,7 @@
         </div>
     </div>
 </section>
+
 
 <?php /*
 <section>
