@@ -9,6 +9,7 @@ function styles_scripts() {
     wp_enqueue_script( 'baseScript', get_template_directory_uri() . '/js/app.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'styles_scripts' );
+//
 
 /* Register navigation menus */
 function customtheme_menus() {
@@ -18,6 +19,7 @@ function customtheme_menus() {
 	register_nav_menus( $locations );
 }
 add_action( 'init', 'customtheme_menus' );
+//
 
 /* Custom favicon */
 function customFavicon() {
@@ -26,6 +28,7 @@ function customFavicon() {
 }
 add_action( 'wp_head', 'customFavicon' ); // front end
 add_action( 'admin_head', 'customFavicon' ); // admin panel
+//
 
 // Polish hanging spouts (wiszace spojniki)
 function spojniki( $tekst ) {
@@ -44,9 +47,11 @@ function spojniki( $tekst ) {
 add_filter( 'the_content',  'spojniki' );
 add_filter( 'the_title',    'spojniki' );
 add_filter( 'comment_text', 'spojniki' );
+//
 
 // Featured Image for every page
 add_theme_support( 'post-thumbnails' );
 if ( function_exists( 'add_theme_support' ) ) {
     add_image_size( 'banner', 1920, 600, array( 'center', 'center' ) );
- }
+}
+//
