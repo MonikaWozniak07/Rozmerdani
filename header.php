@@ -8,13 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
     <meta name="author" content="Monika Woźniak, Łukasz Dzieło">
-    <title>
-        <?php wp_title( '|', true, 'right' ); ?>
-        <?php bloginfo('name'); ?>
-        <?php if ( get_bloginfo('description') ) { ?>
-        | <?php bloginfo( 'description' ); ?>
-        <?php } ?>
-    </title>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
     <?php wp_head(); ?>
 </head>
@@ -50,3 +44,5 @@
         </div>
 
     </header>
+
+    <?php include 'template-parts/_wp_check.php' ?>
