@@ -590,6 +590,16 @@ header nav .main-nav ul .current_page_item a {
   color: var(--primary);
 }
 
+header nav .hamburger-list {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  background-color: var(--primary);
+  width: 50vw;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
 header .nav-logo {
   max-width: unset;
   max-height: 60px;

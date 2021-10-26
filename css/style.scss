@@ -514,6 +514,14 @@ header {
                 }
             }
         }
+        .hamburger-list{
+            position: fixed;
+            top:0;
+            left:100vw;
+            background-color:var(--primary);
+            width: 50vw;
+            transition: .2s;
+        }
     }
     .nav-logo {
         max-width: unset;
