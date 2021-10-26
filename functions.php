@@ -11,6 +11,27 @@ function styles_scripts() {
 add_action( 'wp_enqueue_scripts', 'styles_scripts' );
 //
 
+// theme setup
+function theme_setup() {
+	// Adds <title> tag support
+	add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'theme_setup');
+//
+
+//
+function remove_default_img_sizes( $sizes ) {
+  $targets = ['medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
+  foreach($sizes as $size_index=>$size) {
+    if(in_array($size, $targets)) {
+      unset($sizes[$size_index]);
+    }
+  }
+  return $sizes;
+}
+add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
+//
+
 /* Register navigation menus */
 function customtheme_menus() {
 	$locations = array(
@@ -21,7 +42,7 @@ function customtheme_menus() {
 add_action( 'init', 'customtheme_menus' );
 //
 
-/* Custom favicon */
+// Custom favicon
 function customFavicon() {
 	$favicon_path = get_template_directory_uri() . '/img/favicon.ico';
 	echo '<link rel="shortcut icon" href="' . esc_url($favicon_path) . '" />';

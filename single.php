@@ -13,11 +13,11 @@
 
 <section>
     <div class="container">
-        <div style="background:yellow">index.php</div>
+        <div style="background:#E57373">single.php</div>
         <?php
         while(have_posts()) { ?>
         <?php the_post(); ?>
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <?php the_title(); ?>
         <?php the_content(); ?>
         <?php }
         ?>
