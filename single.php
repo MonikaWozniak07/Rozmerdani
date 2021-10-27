@@ -1,19 +1,31 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The single post file
  */
 ?>
 
 <?php get_header(); ?>
 
+<h1 style="margin:0;padding:10px;background:lightblue;text-align:center;"><?php echo basename( __FILE__ ); ?></h1>
+
+<div>
+    <?php /*
+    if ( has_post_thumbnail() ) {
+        echo get_the_post_thumbnail_url(get_option('page_for_posts'), 'banner');
+    } else {
+        echo get_the_post_thumbnail_url(get_option('page_on_front'), 'banner');
+    }
+    */ ?>
+</div>
+
+<?php if ( has_post_thumbnail() ) : ?>
+<div class="container">
+    <?php the_post_thumbnail('full'); ?>
+</div>
+<?php endif; ?>
+
 <section>
     <div class="container">
-        <div style="background:#E57373">single.php</div>
         <?php
         while(have_posts()) { ?>
         <?php the_post(); ?>
