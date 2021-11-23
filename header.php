@@ -44,5 +44,3 @@
         </div>
 
     </header>
-
-    <?php include 'template-parts/_wp_check.php' ?>
