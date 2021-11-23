@@ -594,10 +594,35 @@ header nav .hamburger-list {
   position: fixed;
   top: 0;
   left: 100vw;
-  background-color: var(--primary);
+  background-color: var(--gray-900);
   width: 50vw;
+  height: 29vh;
+  z-index: 10;
   -webkit-transition: .2s;
   transition: .2s;
+}
+
+header nav .hamburger-list ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 70%;
+}
+
+header nav .hamburger-list ul a {
+  color: var(--primary);
+  text-decoration: none;
 }
 
 header .nav-logo {
@@ -619,6 +644,11 @@ header .nav-logo {
 
 header .nav-hamburger {
   font-size: 32px;
+  z-index: 11;
+}
+
+header .nav-hamburger i:nth-of-type(1).none, header .nav-hamburger i:nth-of-type(2).none {
+  display: none;
 }
 
 header .nav-hamburger:hover {

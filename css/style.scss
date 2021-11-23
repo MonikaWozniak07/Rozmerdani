@@ -519,9 +519,23 @@ header {
             position: fixed;
             top:0;
             left:100vw;
-            background-color:var(--primary);
+            background-color:var(--gray-900);
             width: 50vw;
+            height: 29vh;
+            z-index: 10;
             transition: .2s;
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: space-between;
+                justify-content: space-evenly;
+                height: 70%;
+                a {
+                    color: var(--primary);
+                    text-decoration: none;
+                }
+            }
         }
     }
     .nav-logo {
@@ -536,6 +550,10 @@ header {
     }
     .nav-hamburger {
         font-size: 32px;
+        z-index: 11;
+        i:nth-of-type(1).none, i:nth-of-type(2).none{
+            display: none;
+        }
         &:hover {
             color: var(--primary);
         }
