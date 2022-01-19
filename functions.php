@@ -76,3 +76,81 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_image_size( 'banner', 1920, 600, array( 'center', 'center' ) );
 }
 //
+
+//
+
+//
+
+/*
+* Creating a function to create our CPT
+*/
+
+function custom_post_type() {
+
+	// Set UI labels for Custom Post Type
+		$labels = array(
+			'name'                => _x( 'Rozmerdani', 'Post Type General Name'),
+			'all_items'           => __( 'Wszyscy'),
+			'add_new_item'        => __( 'Dodaj'),
+			'add_new'             => __( 'Dodaj'),
+			'edit_item'           => __( 'Edytuj'),
+			'update_item'         => __( 'Aktualizuj'),
+			'search_items'        => __( 'Szukaj'),
+			'not_found'           => __( 'Nie znaleziono'),
+		);
+
+	// Set other options for Custom Post Type
+
+		$args = array(
+			'label'               => __( 'Rozmerdani'),
+			'labels'              => $labels,
+			// Features this CPT supports in Post Editor
+			'supports'            => array( 'title', 'author', 'thumbnail'),
+			// You can associate this CPT with a taxonomy or custom taxonomy.
+			'taxonomies'          => array( 'animals' ),
+			/* A hierarchical CPT is like Pages and can have
+			* Parent and child items. A non-hierarchical CPT
+			* is like Posts.
+			*/
+			'hierarchical'        => false,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'can_export'          => true,
+			// 'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'post',
+			'show_in_rest' => true,
+
+		);
+
+		// Registering your Custom Post Type
+		register_post_type( 'rozmerdani', $args );
+
+	}
+
+	/* Hook into the 'init' action so that the function
+	* Containing our post type registration is not
+	* unnecessarily executed.
+	*/
+add_action( 'init', 'custom_post_type', 0 );
+
+
+
+
+add_action('admin_head', 'custom_dashboard_styles');
+
+function custom_dashboard_styles() {
+	echo '<style>
+		.acf-field {
+			min-height: unset !important;
+		}
+		.acf-image-uploader img {
+			max-height: 200px !important;
+		}
+	</style>';
+}

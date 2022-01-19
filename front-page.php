@@ -16,23 +16,9 @@
     </div>
 </section>
 
-<?php /* <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(
-    <?php
-        $page_id = get_queried_object_id();
-        echo get_the_post_thumbnail_url( $page_id );
-    ?>
-);">
-<div class="container">
-    <div class="banner_title">
-        <div class="banner_circle"></div>
-        <h1><span>Psy i koty</span><br>Zaadoptuj<br>dowolne zwierzę!</h1>
-    </div>
-</div>
-</section> */ ?>
-
 <?php $sekcja_1 = get_field('sekcja_1'); ?>
 <?php if ($sekcja_1['tekst']):?>
-<section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
+<section class="mt-50 mb-50 mt-lg-100 mb-lg-100">
     <div class="container">
         <div class="grid grid-1_1">
             <div class="grid-content">
