@@ -1,9 +1,3 @@
-<?php
-/**
- * Rozmerdani single pet page
- */
-?>
-
 <?php get_header(); ?>
 
 <?php /*

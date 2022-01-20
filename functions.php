@@ -32,16 +32,6 @@ function remove_default_img_sizes( $sizes ) {
 add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
 //
 
-/* Register navigation menus */
-function customtheme_menus() {
-	$locations = array(
-		'primary'     => __( 'Primary Menu' ),
-	);
-	register_nav_menus( $locations );
-}
-add_action( 'init', 'customtheme_menus' );
-//
-
 // Custom favicon
 function customFavicon() {
 	$favicon_path = get_template_directory_uri() . '/img/favicon.ico';
@@ -71,14 +61,14 @@ add_filter( 'comment_text', 'spojniki' );
 //
 
 // Featured Image for every page
-add_theme_support( 'post-thumbnails' );
-if ( function_exists( 'add_theme_support' ) ) {
-    add_image_size( 'banner', 1920, 600, array( 'center', 'center' ) );
-}
-//
-
-//
-
+function register_my_menus() {
+	register_nav_menus(
+		array(
+		'primary-menu' => __( 'Primary Menu' )
+		)
+	 );
+	}
+	add_action( 'init', 'register_my_menus' );
 //
 
 /*
@@ -138,19 +128,4 @@ function custom_post_type() {
 	* unnecessarily executed.
 	*/
 add_action( 'init', 'custom_post_type', 0 );
-
-
-
-
-add_action('admin_head', 'custom_dashboard_styles');
-
-function custom_dashboard_styles() {
-	echo '<style>
-		.acf-field {
-			min-height: unset !important;
-		}
-		.acf-image-uploader img {
-			max-height: 200px !important;
-		}
-	</style>';
-}
+//

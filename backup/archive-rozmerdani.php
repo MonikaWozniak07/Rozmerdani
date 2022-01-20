@@ -1,9 +1,3 @@
-<?php
-/**
- * Template Name: Rozmerdani archive
- */
-?>
-
 <?php get_header(); ?>
 
 <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php

@@ -1,9 +1,3 @@
-<?php
-/**
- * The main frontpage
- */
-?>
-
 <?php get_header(); ?>
 
 <?php $banner = get_field('banner'); ?>
