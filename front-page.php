@@ -1,3 +1,7 @@
+<?php
+// Template Name: Strona główna
+?>
+
 <?php get_header(); ?>
 
 <?php $banner = get_field('banner'); ?>
