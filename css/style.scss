@@ -493,15 +493,9 @@ header {
         }
         .hamburger-list {
             position: fixed;
-<<<<<<< HEAD
-            top:0vh;
-            left:100vw;
-            background-color:var(--gray-900);
-=======
             top: 0;
             left: 100vw;
             background-color: var(--gray-900);
->>>>>>> 2ed98685ddf8c9168c881b5614acb2a1e789333e
             width: 50vw;
             height: 29vh;
             z-index: 10;
