@@ -1,19 +1,19 @@
 /* test */
 
-const hamburgerBody = document.querySelector('.hamburger-list');
-const hamburgerIcon = document.querySelector('.fa-bars');
-const xIcon = document.querySelector('.fa-times');
+const hamburgerBody = document.querySelector(".hamburger-list");
+const hamburgerIcon = document.querySelector(".fa-bars");
+const xIcon = document.querySelector(".fa-times");
 
-xIcon.classList.add('none')
+xIcon.classList.add("none");
 
-hamburgerIcon.addEventListener('click',function(){
-    hamburgerBody.style.left = 50 + 'vw';
-    hamburgerIcon.classList.add('none')
-    xIcon.classList.remove('none')
-})
+hamburgerIcon.addEventListener("click", function () {
+    hamburgerBody.style.right = 0 + "vw";
+    hamburgerIcon.classList.add("none");
+    xIcon.classList.remove("none");
+});
 
-xIcon.addEventListener('click', function(){
-    hamburgerBody.style.left = 100 + 'vw';
-    hamburgerIcon.classList.remove('none')
-    xIcon.classList.add('none')
-})
+xIcon.addEventListener("click", function () {
+    hamburgerBody.style.right = -50 + "vw";
+    hamburgerIcon.classList.remove("none");
+    xIcon.classList.add("none");
+});

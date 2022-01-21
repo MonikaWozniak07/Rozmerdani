@@ -38,6 +38,7 @@
                 </a>
                 <div class="nav-hamburger">
                     <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
                 </div>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'hamburger-list' ) ); ?>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main-nav' ) ); ?>

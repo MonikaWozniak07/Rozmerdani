@@ -577,7 +577,7 @@ header nav .main-nav ul .current_page_item a {
 header nav .hamburger-list {
   position: fixed;
   top: 0;
-  left: 100vw;
+  right: -50vw;
   background-color: var(--gray-900);
   width: 50vw;
   height: 29vh;
