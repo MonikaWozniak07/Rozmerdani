@@ -19,7 +19,7 @@
                 <?php echo $sekcja_1['tekst']; ?>
             </div>
             <div class="grid-image order-tablet-1 justify-self-center mobile-sm">
-                <img src="<?php echo esc_url( $sekcja_1['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_1['obraz']['title'] ); ?>">
+                <img src="<?php echo esc_url( $sekcja_1['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_1['obraz']['alt'] ); ?>">
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
 
                 </div>
                 <div class="grid-image order-tablet-1">
-                    <img src="<?php echo esc_url( $sekcja_2['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_2['obraz']['title'] ); ?>">
+                    <img src="<?php echo esc_url( $sekcja_2['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_2['obraz']['alt'] ); ?>">
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
                 <?php echo $sekcja_3['tekst']; ?>
             </div>
             <div class="grid-image align-self-end justify-self-center mobile-sm">
-                <img src="<?php echo esc_url( $sekcja_3['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_3['obraz']['title'] ); ?>">
+                <img src="<?php echo esc_url( $sekcja_3['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_3['obraz']['alt'] ); ?>">
             </div>
         </div>
     </div>
