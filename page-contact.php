@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 <?php $banner = get_field('banner'); ?>
-<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url( <?php echo $banner['obraz']; ?> );">
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url( <?php echo esc_url($banner['url']); ?> );">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
