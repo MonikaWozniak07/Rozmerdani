@@ -39,7 +39,8 @@
                 <div class="nav-hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
-                <?php wp_nav_menu( array( 'container_class' => 'main-nav', 'theme_location' => 'primary' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'hamburger-list' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main-nav' ) ); ?>
             </nav>
         </div>
 
