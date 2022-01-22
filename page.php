@@ -25,9 +25,8 @@
 
 
     <section>
-
         <?php $image = get_field('podopieczny');
-    if( !empty( $image ) ): ?>
+        if( !empty( $image ) ): ?>
         <div class="container">
             <div class="grid grid-3_2">
                 <div class="grid-content mt-50 mt-lg-100 mb-25 mb-lg-100">
@@ -46,7 +45,6 @@
             </div>
         </div>
         <?php endif; ?>
-
     </section>
 
     <?php get_footer(); ?>

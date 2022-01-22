@@ -6,34 +6,19 @@
 
 <?php get_header(); ?>
 
-<h1 style="margin:0;padding:10px;background:lightblue;text-align:center;"><?php echo basename( __FILE__ ); ?></h1>
-
-<div>
-    <?php /*
-    if ( has_post_thumbnail() ) {
-        echo get_the_post_thumbnail_url(get_option('page_for_posts'), 'banner');
-    } else {
-        echo get_the_post_thumbnail_url(get_option('page_on_front'), 'banner');
-    }
-    */ ?>
-</div>
-
-<?php if ( has_post_thumbnail() ) : ?>
-<div class="container">
-    <?php the_post_thumbnail('full'); ?>
-</div>
-<?php endif; ?>
-
-<section>
-    <div class="container">
+<section class="news-post">
+    <article class="container-sm pt-50 pb-50 pb-lg-100">
+        <div class="text-center mb-25">
+            <h1 class="title"><?php the_title(); ?></h1>
+            <div class="date"><?php echo get_the_date(); ?></div>
+        </div>
         <?php
-        while(have_posts()) { ?>
-        <?php the_post(); ?>
-        <?php the_title(); ?>
+        $image = get_field('obraz');
+        if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="featured-image"/>
+        <?php endif; ?>
         <?php the_content(); ?>
-        <?php }
-        ?>
-    </div>
+    </article>
 </section>
 
 <?php get_footer(); ?>

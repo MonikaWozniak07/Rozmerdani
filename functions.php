@@ -128,3 +128,17 @@ function register_my_menus() {
 // 	*/
 // add_action( 'init', 'custom_post_type', 0 );
 //
+
+// excerpt options
+function custom_excerpt_length( $length ) {return 100;}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+function custom_excerpt_more( $more ) {return '';}
+add_filter('excerpt_more', 'custom_excerpt_more');
+//
+
+// pagination class
+add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
+function posts_link_attributes_1() {return 'class="link-next"';}
+function posts_link_attributes_2() {return 'class="link-prev"';}
+//

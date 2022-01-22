@@ -1,4 +1,3 @@
-<?php /*
 <div>
     <?php
     if ( has_post_thumbnail() ) {
@@ -27,9 +26,7 @@
 </section>
 
 <hr style="margin:0;border:0;height:10px;background:red;">
-*/ ?>
 
-<?php /*
 <section class="banner pt-50 pb-50 pt-lg-100 pb-lg-100" style="
     background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'banner') ?>)
 ">
@@ -44,10 +41,8 @@
     </div>
 </div>
 </section>
-*/ ?>
 
 
-<?php /*
 <section>
     <div class="container">
         <?php while ( have_posts() ) : the_post(); //Open the loop ?>
@@ -71,9 +66,7 @@
 <?php endwhile; // End the loop. ?>
 </div>
 </section>
-*/ ?>
-
-<?php /*
+<?php
 if ( have_posts() ) {
 
 	// Load posts loop.
@@ -87,9 +80,8 @@ if ( have_posts() ) {
 	// If no content, include the "No posts found" template.
 	get_template_part( 'template-parts/content-none' );
 
-} */ ?>
-
-<?php /*
+}
+?>
 <section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
     <div class="container">
         <div class="grid grid-1_1">
@@ -137,4 +129,3 @@ if ( have_posts() ) {
         </div>
     </div>
 </section>
-*/ ?>

@@ -10,15 +10,10 @@
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
-            <h1>404</h1>
-        </div>
-    </div>
-</section>
-
-<section class="mt-50 mt-lg-100 mb-50 mb-lg-100">
-    <div class="container">
-        <p>Nic tutaj nie ma :/ Wróć do strony głównej!</p>
+            <h1><strong>404</strong></h1>
+            <h2>Strona nie istnieje lub została usunięta</h2>
         <a href="<?php echo get_site_url(); ?>" class="btn">Wróć</a>
+        </div>
     </div>
 </section>
 
