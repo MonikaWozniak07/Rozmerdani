@@ -30,19 +30,18 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <nav>
                 <a href="<?php echo get_site_url(); ?>">
                     <img class="nav-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
                 </a>
-                <div class="nav-hamburger">
-                    <i class="fas fa-bars"></i>
-                    <i class="fas fa-times"></i>
-                </div>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'hamburger-list' ) ); ?>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main-nav' ) ); ?>
+                <button class="menu-toggler" type="button">
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                </button>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main' ) ); ?>
             </nav>
         </div>
-
     </header>

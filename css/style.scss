@@ -387,8 +387,14 @@ img {
     }
 }
 
+button:not(:disabled) {
+    cursor: pointer;
+}
+
 // header
 header {
+    position: relative;
+    z-index: 2;
     .header-gold {
         background-color: var(--primary);
         color: var(--white);
@@ -465,28 +471,130 @@ header {
         }
     }
     nav {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         padding: 15px 0;
         @media (min-width: $lg-min) {
             padding: 30px 0;
         }
-        .main-nav {
-            display: none;
+        .menu-toggler {
+            $toggler-size: 36px;
+            $toggler-height: 4px;
+            $toggler-radius: 99px;
+            $toggler-transition: 0s;
+
+            position: relative;
+            padding: 0;
+            border: 0;
+            width: $toggler-size;
+            height: $toggler-size;
+            background-color: transparent;
             @media (min-width: $lg-min) {
-                display: flex;
+                display: none;
+            }
+            &:focus {
+                outline: none;
+            }
+            .toggler-line {
+                position: absolute;
+                width: 100%;
+                height: $toggler-height;
+                border-radius: $toggler-radius;
+                background: var(--primary);
+                transform: translatey(-50%);
+                &:nth-of-type(1),
+                &:nth-of-type(4) {
+                    transition: width $toggler-transition 0s,
+                        top $toggler-transition $toggler-transition,
+                        opacity 0s $toggler-transition;
+                }
+                &:nth-of-type(1) {
+                    top: round($toggler-size/4);
+                }
+                &:nth-of-type(4) {
+                    right: 0;
+                    top: round($toggler-size/4 * 3);
+                }
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    transition: transform $toggler-transition 0s;
+                }
+            }
+            &.open {
+                .toggler-line {
+                    &:nth-of-type(1),
+                    &:nth-of-type(4) {
+                        top: 50%;
+                        opacity: 0;
+                        transition: top $toggler-transition 0s,
+                            opacity 0s $toggler-transition,
+                            width $toggler-transition 0s;
+                    }
+                    &:nth-of-type(2),
+                    &:nth-of-type(3) {
+                        top: 50%;
+                        transition: transform $toggler-transition
+                            $toggler-transition;
+                    }
+                    &:nth-of-type(2) {
+                        transform: translatey(-50%) rotate(45deg);
+                    }
+                    &:nth-of-type(3) {
+                        transform: translatey(-50%) rotate(-45deg);
+                    }
+                }
+            }
+            &:hover .toggler-line {
+                &:nth-of-type(1),
+                &:nth-of-type(4) {
+                    width: 50%;
+                }
+            }
+        }
+        .main {
+            background: var(--white);
+            @media (max-width: $md-max) {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                z-index: 1;
+                display: none;
+            }
+            &.open {
+                display: block;
             }
             ul {
                 display: flex;
                 justify-content: flex-end;
+                flex-direction: column;
                 flex-wrap: wrap;
                 align-content: center;
+                margin: 0;
+                padding: 0;
                 list-style: none;
+                @media (max-width: $md-max) {
+                    border-width: 1px 0;
+                    border-style: solid;
+                    border-color: var(--gray-200);
+                    padding: 1.5rem 0;
+                }
+                @media (min-width: $lg-min) {
+                    flex-direction: row;
+                }
                 li {
-                    margin-left: 15px;
-                    @media (min-width: $xl-min) {
-                        margin-left: 30px;
+                    @media (max-width: $md-max) {
+                        padding: 0.75rem 2.5rem;
+                    }
+                    + li {
+                        @media (min-width: $lg-min) {
+                            margin-left: 15px;
+                        }
+                        @media (min-width: $xl-min) {
+                            margin-left: 30px;
+                        }
                     }
                     a {
                         color: var(--gray-900);
@@ -506,28 +614,6 @@ header {
                 }
             }
         }
-        .hamburger-list {
-            position: fixed;
-            top: 0;
-            right: -50vw;
-            background-color: var(--gray-900);
-            width: 50vw;
-            height: 29vh;
-            z-index: 10;
-            transition: 0.2s;
-            ul {
-                list-style: none;
-                display: flex;
-                flex-direction: column;
-                align-items: space-between;
-                justify-content: space-evenly;
-                height: 70%;
-                a {
-                    color: var(--primary);
-                    text-decoration: none;
-                }
-            }
-        }
     }
     .nav-logo {
         max-width: unset;
@@ -537,20 +623,6 @@ header {
         }
         @media (min-width: $xl-min) {
             max-height: 100px;
-        }
-    }
-    .nav-hamburger {
-        font-size: 32px;
-        z-index: 11;
-        i:nth-of-type(1).none,
-        i:nth-of-type(2).none {
-            display: none;
-        }
-        &:hover {
-            color: var(--primary);
-        }
-        @media (min-width: $lg-min) {
-            display: none;
         }
     }
 }
