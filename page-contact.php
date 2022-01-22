@@ -4,32 +4,38 @@
 
 <?php get_header(); ?>
 
-<?php $banner = get_field('banner'); ?>
-<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url( <?php echo esc_url($banner['url']); ?> );">
-    <div class="container">
-        <div class="banner_title">
-            <div class="banner_circle"></div>
-            <h1><strong><?php wp_title(''); ?></strong></h1>
+<?php
+    $banner_home = get_field('banner', get_option('page_on_front'))['obraz']['url'];
+    $banner_page = get_field('banner')['url'];
+    if( !empty( $banner_page ) ): ?>
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_page); ?>);">
+    <?php else : ?>
+    <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_home); ?>);">
+        <?php endif; ?>
+        <div class="container">
+            <div class="banner_title">
+                <div class="banner_circle"></div>
+                <h1><strong><?php wp_title(''); ?></strong></h1>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section>
-    <div class="container">
-        <div class="grid grid-3_2">
-            <div class="grid-content mt-50 mt-lg-100 mb-25 mb-lg-100">
+    <section>
+        <div class="container">
+            <div class="grid grid-3_2">
+                <div class="grid-content mt-50 mt-lg-100 mb-25 mb-lg-100">
 
-                <?php $ikona = get_field('ikona'); ?>
-                <?php if ($ikona['tekst']):?>
-                <div style="text-align: center;">
-                    <img src="<?php echo $ikona['ikona']; ?>" alt="" class="mb-25">
-                    <?php echo $ikona['tekst']; ?>
-                </div>
-                <?php endif;?>
+                    <?php $ikona = get_field('ikona'); ?>
+                    <?php if ($ikona['tekst']):?>
+                    <div style="text-align: center;">
+                        <img src="<?php echo $ikona['ikona']; ?>" alt="" class="mb-25">
+                        <?php echo $ikona['tekst']; ?>
+                    </div>
+                    <?php endif;?>
 
-                <div class="mt-50">
-                    <?php echo do_shortcode(get_field('formularz')); ?>
-                    <?php /* // Contact Form 7
+                    <div class="mt-50">
+                        <?php echo do_shortcode(get_field('formularz')); ?>
+                        <?php /* // Contact Form 7
                         <div class="grid-form mb-25">
                             <div>
                                 <label for="your-name">Imię i nazwisko <span>*</span></label>
@@ -55,17 +61,17 @@
                         [submit class:btn "Wyślij"]
                         </div>
                     */ ?>
+                    </div>
+                </div>
+                <div class="grid-image align-self-end justify-self-center mobile-sm sticky-bottom pt-lg-100">
+                    <?php $image = get_field('podopieczny');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
                 </div>
             </div>
-            <div class="grid-image align-self-end justify-self-center mobile-sm sticky-bottom pt-lg-100">
-                <?php $image = get_field('podopieczny');
-                if( !empty( $image ) ): ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php endif; ?>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
