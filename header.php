@@ -19,29 +19,46 @@
     <header>
         <div class="header-gold">
             <div class="container">
-                <div class="header-gold_account">Nr konta: <code style="font-family: var(--sans-serif) !important;">92 1090 2590 0000 0001 4775 6986</code></div>
+
+                <?php if (carbon_get_theme_option( 'account' )) { ?>
+                    <div class="header-gold_account">Nr konta: <code style="font-family: var(--sans-serif) !important;"><?php echo carbon_get_theme_option( 'account' ); ?></code></div>
+                <?php } ?>
                 <div class="header-gold_links">
-                    <a href="mailto:stowarzyszenie.rozmerdany.dwor@gmail.com">stowarzyszenie.rozmerdany.dwor@gmail.com</a>
-                    <a href="tel:+48 724 088 730" class="phone">tel. +48 724 088 730</a>
+
+                    <?php if (carbon_get_theme_option( 'email' )) { ?>
+                        <a href="mailto:<?php echo carbon_get_theme_option( 'email' ); ?>"><?php echo carbon_get_theme_option( 'email' ); ?></a>
+                    <?php } ?>
+
+                    <?php if (carbon_get_theme_option( 'phone' )) { ?>
+                        <a href="tel:<?php echo carbon_get_theme_option( 'phone_link' ); ?>" class="phone">tel. <?php echo carbon_get_theme_option( 'phone' ); ?></a>
+                    <?php } ?>
+
                 </div>
                 <div class="header-gold_socials">
-                    <a href="https://www.facebook.com/Stowarzyszenie-Rozmerdany-Dw%C3%B3r-104886284806819" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/stowarzyszenie_rozmerdani/" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <?php if (carbon_get_theme_option( 'link_facebook' )) { ?>
+                        <a href="<?php echo carbon_get_theme_option( 'link_facebook' ); ?>" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <?php } ?>
+
+                    <?php if (carbon_get_theme_option( 'link_instagram' )) { ?>
+                        <a href="<?php echo carbon_get_theme_option( 'link_instagram' ); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
-
         <div class="container">
             <nav>
                 <a href="<?php echo get_site_url(); ?>">
                     <img class="nav-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo">
                 </a>
-                <div class="nav-hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'hamburger-list' ) ); ?>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main-nav' ) ); ?>
+                <button class="menu-toggler" type="button">
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                    <div class="toggler-line"></div>
+                </button>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container_class' => 'main' ) ); ?>
             </nav>
         </div>
-
     </header>
