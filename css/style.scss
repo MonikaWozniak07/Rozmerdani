@@ -702,28 +702,55 @@ footer {
         }
     }
 }
+
 // sekcja team
-.person-container{
+.person {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-    > * {
-        margin: 0 auto;
-        border-radius: 5px;
+    &-grid {
+        align-items: flex-start;
     }
-    .person_img {
-        max-width: 200px;
+    .person-img {
+        margin: 0 auto;
         img {
-            max-height: 200px;
+            border-radius: 10px 10px 0 0;
+            width: 200px;
+            height: 200px;
+        }
+        .placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            width: 200px;
+            height: 200px;
+            background-color: var(--gray-100);
         }
     }
-    .person_text {
-        max-width: 500px;
-        margin-top: -10px;
+    .person-text {
+        width: 100%;
+        border-radius: 10px;
+        padding: 5vw 5vw;
+        background-color: var(--gray-200);
         text-align: center;
-        padding: 10px 5px;
-        box-shadow: 5px 5px 20px gray;
-        background-color: #eeeeee;
+        // box-shadow: 5px 5px 15px -10px var(--gray-900);
+        @media (min-width: $lg-min) {
+            padding: 2.5vw 2.5vw;
+        }
+    }
+    .name {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .dsc {
+        margin-top: 1rem;
+    }
+    .phone {
+        margin-top: 1rem;
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
     }
 }
 
@@ -991,5 +1018,20 @@ form {
     }
     .link-next {
         margin-left: auto;
+    }
+}
+
+.pets {
+    &-grid {
+        align-items: flex-start;
+    }
+    &-item {
+        .gallery {
+            display: flex;
+            img {
+                max-width: 60px;
+                height: auto;
+            }
+        }
     }
 }

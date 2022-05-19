@@ -4,50 +4,55 @@
 
 <?php get_header(); ?>
 
-<?php $banner = get_field('banner'); ?>
-<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url( <?php echo esc_url($banner['obraz']['url']); ?> );">
+<?php
+if ( carbon_get_the_post_meta( 'banner_image' ) ):
+    $banner_image = wp_get_attachment_image_url( carbon_get_the_post_meta( 'banner_image' ), '' );
+else:
+    $banner_image = get_template_directory_uri().'/img/banner-rozmerdani.jpg';
+endif;
+?>
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url( <?php echo $banner_image; ?> );">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
-            <?php echo $banner['tytul']; ?>
+            <?php echo wpautop( carbon_get_the_post_meta('banner_text') ); ?>
         </div>
     </div>
 </section>
 
-<?php $sekcja_1 = get_field('sekcja_1'); ?>
-<?php if ($sekcja_1['tekst']):?>
+<?php
+    $test = carbon_get_the_post_meta( 'section_1' );
+    echo $test['section1_text'];
+?>
+
+<?php if (carbon_get_the_post_meta('section1_text')):?>
 <section class="mt-50 mb-50 mt-lg-100 mb-lg-100">
     <div class="container">
         <div class="grid grid-1_1">
             <div class="grid-content">
-                <?php echo $sekcja_1['tekst']; ?>
+                <?php echo wpautop( carbon_get_the_post_meta('section1_text') ); ?>
             </div>
             <div class="grid-image order-tablet-1 justify-self-center mobile-sm">
-                <img src="<?php echo esc_url( $sekcja_1['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_1['obraz']['alt'] ); ?>">
+                <?php echo wp_get_attachment_image( carbon_get_the_post_meta( 'section1_image' ), '' ); ?>
             </div>
         </div>
     </div>
 </section>
 <?php endif;?>
 
-<?php $sekcja_2 = get_field('sekcja_2'); ?>
-<?php if ($sekcja_2['tekst']):?>
+<?php if (carbon_get_the_post_meta('section2_text')):?>
 <section class="section-help mt-50 mt-lg-100">
     <div class="container">
         <div class="bg-gray rounded overflow-hidden">
             <div class="grid grid-1_1">
                 <div class="grid-content">
-                    <?php echo $sekcja_2['tekst']; ?>
-
-                    <?php if ($sekcja_2['link']):?>
-
-                    <a href="<?php echo $sekcja_2['link']; ?>" class="btn"><?php echo $sekcja_2['link_tekst']; ?></a>
-
+                    <?php echo wpautop( carbon_get_the_post_meta('section2_text') ); ?>
+                    <?php if (carbon_get_the_post_meta('link_text')):?>
+                        <a href="<?php echo carbon_get_the_post_meta('link_to'); ?>" class="btn"><?php echo carbon_get_the_post_meta('link_text'); ?></a>
                     <?php endif;?>
-
                 </div>
                 <div class="grid-image order-tablet-1">
-                    <img src="<?php echo esc_url( $sekcja_2['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_2['obraz']['alt'] ); ?>">
+                    <?php echo wp_get_attachment_image( carbon_get_the_post_meta( 'section2_image' ), '' ); ?>
                 </div>
             </div>
         </div>
@@ -55,16 +60,15 @@
 </section>
 <?php endif;?>
 
-<?php $sekcja_3 = get_field('sekcja_3'); ?>
-<?php if ($sekcja_3['tekst']):?>
+<?php if (carbon_get_the_post_meta('section3_text')):?>
 <section class="mt-50 mt-lg-100">
     <div class="container">
         <div class="grid grid-1_1">
             <div class="grid-content pb-lg-100">
-                <?php echo $sekcja_3['tekst']; ?>
+                <?php echo wpautop( carbon_get_the_post_meta('section3_text') ); ?>
             </div>
             <div class="grid-image align-self-end justify-self-center mobile-sm">
-                <img src="<?php echo esc_url( $sekcja_3['obraz']['url'] ); ?>" alt="<?php echo esc_attr( $sekcja_3['obraz']['alt'] ); ?>">
+                <?php echo wp_get_attachment_image( carbon_get_the_post_meta( 'section3_image' ), '' ); ?>
             </div>
         </div>
     </div>
