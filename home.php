@@ -1,7 +1,3 @@
-<?php
-// Template Name: Aktualności
-?>
-
 <?php get_header(); ?>
 
 <?php
