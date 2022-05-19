@@ -23,13 +23,12 @@ function crb_page_pets() {
         ->add_fields( array(
             Field::make( 'complex', 'pets', __('') )
                 ->set_layout( 'grid' )
-                ->set_collapsed( true )
                 ->add_fields( array(
-                    Field::make( 'image', 'image', __( 'Image' ) )
-                        ->set_width( 20 ),
                     Field::make( 'text', 'name', __( 'Name' ) )
                         ->set_width( 80 )
                         ->set_required( true ),
+                    Field::make( 'image', 'image', __( 'Image' ) )
+                        ->set_width( 20 ),
                     Field::make( 'textarea', 'dsc', 'Description' )
                         ->set_width( 80 ),
                     Field::make( 'media_gallery', 'gallery', __( 'Gallery' ) )

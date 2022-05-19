@@ -27,17 +27,22 @@ endif;
                 $slides = carbon_get_the_post_meta( 'pets' );
                 foreach ( $slides as $slide ) {?>
                 <div class="pets-item">
-                    <div class="image"><?php echo wp_get_attachment_image( $slide['image'], '' ); ?></div>
+                    <div class="image"><?php echo wp_get_attachment_image( $slide['image'], 'medium' ); ?></div>
                     <div class="name"><?php echo $slide['name']; ?></div>
+                    <?php /*
                     <div class="dsc"><?php echo $slide['dsc']; ?></div>
                     <div class="gallery">
                         <?php
-                        foreach( $slide['gallery'] as $i => $image ){
-                            echo wp_get_attachment_image( $image, 'thumbnail' );
-                            // echo wp_get_attachment_image_url( $image, '' );
-                        }
-                        ?>
+                        foreach( $slide['gallery'] as $i => $image ){ ?>
+                            <div class="item">
+                                <?php
+                                echo wp_get_attachment_image( $image, 'thumbnail' );
+                                // echo wp_get_attachment_image_url( $image, '' );
+                                ?>
+                            </div>
+                            <?php } ?>
                     </div>
+                    */ ?>
                 </div>
             <?php } ?>
         </div>

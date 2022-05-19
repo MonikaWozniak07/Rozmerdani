@@ -12,11 +12,11 @@
             <h1 class="title"><?php the_title(); ?></h1>
             <div class="date"><?php echo get_the_date(); ?></div>
         </div>
-        <?php
-        $image = get_field('obraz');
-        if( !empty( $image ) ): ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="featured-image"/>
-        <?php endif; ?>
+
+        <?php if ( has_post_thumbnail() ) { ?>
+            <?php the_post_thumbnail('medium_large', array('class' => 'featured-image')); ?>
+        <?php } ?>
+
         <?php the_content(); ?>
     </article>
 </section>
