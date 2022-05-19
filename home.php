@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 <?php
-if ( carbon_get_the_post_meta( 'banner_image' ) ):
+if ( carbon_get_post_meta( get_option('page_for_posts'), 'banner_image' ) ):
     $banner_image = wp_get_attachment_image_url( carbon_get_post_meta( get_option('page_for_posts'), 'banner_image' ), '' );
 else:
     $banner_image = get_template_directory_uri().'/img/banner-rozmerdani.jpg';
