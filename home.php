@@ -1,17 +1,13 @@
-<?php
-// Template Name: Aktualności
-?>
-
 <?php get_header(); ?>
 
 <?php
-    $banner_home = get_field('banner', get_option('page_on_front'))['obraz']['url'];
-    $banner_news = get_field('banner', get_option('page_for_posts'))['url'];
-    if( !empty( $banner_news ) ): ?>
-    <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_news); ?>);">
-    <?php else : ?>
-    <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_home); ?>);">
-    <?php endif; ?>
+if ( carbon_get_post_meta( get_option('page_for_posts'), 'banner_image' ) ):
+    $banner_image = wp_get_attachment_image_url( carbon_get_post_meta( get_option('page_for_posts'), 'banner_image' ), '' );
+else:
+    $banner_image = get_template_directory_uri().'/img/banner-rozmerdani.jpg';
+endif;
+?>
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(  <?php echo $banner_image; ?> );">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
@@ -27,13 +23,12 @@
 
             <?php while ( have_posts() ) : the_post();  ?>
             <div class="news-item">
-            <?php
-            $image = get_field('obraz');
-            if( !empty( $image ) ): ?>
-            <div class="image">
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            </div>
-            <?php endif; ?>
+
+            <?php if ( has_post_thumbnail() ) { ?>
+                <div class="image">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+            <?php } ?>
 
             <div class="content">
                 <div class="h2 title"><?php the_title(); ?></div>

@@ -5,13 +5,13 @@
 <?php get_header(); ?>
 
 <?php
-$banner_home = get_field('banner', get_option('page_on_front'))['obraz']['url'];
-$banner_page = get_field('banner')['url'];
-if( !empty( $banner_page ) ): ?>
-    <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_page); ?>);">
-<?php else : ?>
-    <section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(<?php echo esc_url($banner_home); ?>);">
-<?php endif; ?>
+if ( carbon_get_the_post_meta( 'banner_image' ) ):
+    $banner_image = wp_get_attachment_image_url( carbon_get_the_post_meta( 'banner_image' ), '' );
+else:
+    $banner_image = get_template_directory_uri().'/img/banner-rozmerdani.jpg';
+endif;
+?>
+<section class="banner banner-sm pt-50 pb-50 pt-lg-100 pb-lg-100" style="background-image: url(  <?php echo $banner_image; ?> );">
     <div class="container">
         <div class="banner_title">
             <div class="banner_circle"></div>
@@ -21,40 +21,36 @@ if( !empty( $banner_page ) ): ?>
 </section>
 
 <section>
-    <?php $image = get_field('podopieczny');
-    if( !empty( $image ) ): ?>
+    <?php if( carbon_get_the_post_meta( 'image' ) ): ?>
     <div class="container">
         <div class="grid grid-3_2">
             <div class="grid-content mt-50 mt-lg-100 mb-25 mb-lg-100">
-                <?php $ikona = get_field('ikona'); ?>
-                <?php if ($ikona['tekst']):?>
-                <div style="text-align: center;">
-                    <img src="<?php echo $ikona['ikona']; ?>" alt="" class="mb-25">
-                    <?php echo $ikona['tekst']; ?>
-                </div>
+                <?php if ( carbon_get_the_post_meta('text') ): ?>
+                    <div style="text-align: center;">
+                        <?php echo carbon_get_the_post_meta('icon') ?>
+                        <?php echo wpautop( carbon_get_the_post_meta('text') ); ?>
+                    </div>
                 <?php endif;?>
                 <div class="mt-50">
-                    <?php echo do_shortcode(get_field('formularz')); ?>
+                    <?php echo do_shortcode( carbon_get_the_post_meta('form') ); ?>
                 </div>
             </div>
-
             <div class="grid-image align-self-end justify-self-center mobile-sm sticky-bottom pt-lg-100">
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php echo wp_get_attachment_image( carbon_get_the_post_meta( 'image' ), '' ); ?>
             </div>
         </div>
     </div>
     <?php else : ?>
     <div class="container-sm">
         <div class="mt-50 mt-lg-100 mb-50 mb-lg-100">
-            <?php $ikona = get_field('ikona'); ?>
-            <?php if ($ikona['tekst']):?>
-            <div style="text-align: center;">
-                <img src="<?php echo $ikona['ikona']; ?>" alt="" class="mb-25">
-                <?php echo $ikona['tekst']; ?>
-            </div>
+            <?php if ( carbon_get_the_post_meta('text') ): ?>
+                <div style="text-align: center;">
+                    <?php echo carbon_get_the_post_meta('icon') ?>
+                    <?php echo wpautop( carbon_get_the_post_meta('text') ); ?>
+                </div>
             <?php endif;?>
             <div class="mt-50">
-                <?php echo do_shortcode(get_field('formularz')); ?>
+                <?php echo do_shortcode( carbon_get_the_post_meta('form') ); ?>
             </div>
         </div>
     </div>
