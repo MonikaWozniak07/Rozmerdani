@@ -1,0 +1,20 @@
+{
+    "rozmerdani" : [
+        {"name": "Fred", "type" : "kot", "opis" : " puchata czarno - biała kulka", "img" :"./img/cat-bw.jpg" },
+        {
+            "name":"Ciapek","type" : "pies", "opis": "spokojny i lubi się ślinić", "img" : "./img/ciapek.jpg"
+        },
+        {
+            "name":"Klusek","type" : "pies", "opis": "flegmatyczny, lubi się przytulac i spać", "img" : "./img/klusek.jpg"
+        },
+        {
+            "name":"Lucyna","type" : "kot", "opis": "płochliwa, lubi się wygrzewać w słońcu", "img" : "./img/lucyna.jpg"
+        },
+        {
+            "name":"George","type" : "kot", "opis": "lubi się miziać, często miauczy", "img" : "./img/george.jpg"
+        },
+        {
+            "name":"Śnieżka","type" : "pies", "opis": "wyszczekana starsza pani", "img" : "./img/sniezka.jpg"
+        }
+    ]
+}
