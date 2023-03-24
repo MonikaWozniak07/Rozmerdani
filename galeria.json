@@ -15,6 +15,18 @@
         },
         {
             "name":"Śnieżka","type" : "pies", "opis": "wyszczekana starsza pani", "img" : "./img/sniezka.jpg"
+        },
+        {
+            "name":"Reksio","type" : "pies", "opis": "towarzyski, radosny psiak", "img" : "./img/reksio.jpg"
+        },
+        {
+            "name":"Fiona","type" : "pies", "opis": "spokojna kilkuletnia suczka, cicha i tulaśna", "img" : "./img/fiona.jpg"
+        },
+        {
+            "name":"Tuptuś","type" : "pies", "opis": "lubi aportować, łasuch jakich mało", "img" : "./img/tuptus.jpg"
+        },
+        {
+            "name":"Szeryf","type" : "pies", "opis": "Szef psiaków, towarzyski i wygadany, wszedzie go pełno", "img" : "./img/szeryf.jpg"
         }
     ]
 }
