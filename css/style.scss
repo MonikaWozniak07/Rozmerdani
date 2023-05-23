@@ -74,16 +74,8 @@ img {
 
 // container
 .container {
-    margin-right: auto;
-    margin-left: auto;
-    width: 85%;
-    max-width: 1320px;
-    &-sm {
-        margin-right: auto;
-        margin-left: auto;
-        width: 85%;
-        max-width: 762px;
-    }
+    margin-inline: auto;
+    width: min(85%, 1320px)
 }
 
 // margines

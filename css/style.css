@@ -197,7 +197,8 @@ header .header__gold .header__links .header__links__socials {
   gap: 8px 16px;
 }
 header .header__logo {
-  max-width: unset;
+  display: inline-block;
+  max-width: 60%;
   max-height: 60px;
 }
 @media (min-width: 900px) {
@@ -210,6 +211,20 @@ header .header__logo {
     max-height: 100px;
   }
 }
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 12px 0;
+}
 header .nav__toggler {
   position: relative;
   margin: 0;
@@ -219,8 +234,13 @@ header .nav__toggler {
   height: 36px;
   background: transparent;
 }
+@media (min-width: 900px) {
+  header .nav__toggler {
+    display: none;
+  }
+}
 header .nav__toggler:before, header .nav__toggler:after,
-header .nav__toggler div {
+header .nav__toggler span {
   position: absolute;
   top: 50%;
   left: 0;
@@ -233,19 +253,60 @@ header .nav__toggler div {
   translate: 0 -50%;
 }
 header .nav__toggler:before {
-  top: 30%;
+  top: 25%;
 }
 header .nav__toggler:after {
-  top: 70%;
+  top: 75%;
+}
+header .nav__toggler.show:before {
+  top: 50%;
+  rotate: 45deg;
+}
+header .nav__toggler.show:after {
+  top: 50%;
+  rotate: -45deg;
+}
+header .nav__toggler.show span {
+  display: none;
 }
 header .nav__menu {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 24px 0 0;
   list-style: none;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  header .nav__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 24px;
+    width: auto;
+    padding: 0;
+  }
+}
+header .nav__menu li {
+  font-size: 18px;
 }
 header .nav__menu a {
-  color: var(--primary);
+  color: var(--gray-900);
   text-decoration: none;
+}
+header .nav__menu.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 footer {
@@ -289,16 +350,8 @@ footer a:hover {
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 85%;
-  max-width: 1320px;
-}
-.container-sm {
-  margin-right: auto;
-  margin-left: auto;
-  width: 85%;
-  max-width: 762px;
+  margin-inline: auto;
+  width: min(85%, 1320px);
 }
 
 .mt-0 {
