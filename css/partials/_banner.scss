@@ -2,14 +2,14 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 150px;
-    padding: 50px 0;
+    min-height: 148px;
+    padding: 48px 0;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     @media (min-width: $lg-min) {
         min-height: 260px;
-        padding: 100px 0;
+        padding: 96px 0;
     }
     @media (min-width: $xl-min) {
         min-height: 300px;

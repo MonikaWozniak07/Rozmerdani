@@ -1,0 +1,52 @@
+.section__help {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 25px;
+    width: min(85%, 1320px);
+    margin: 48px auto;
+    border-radius: 0.5rem;
+    background-color: var(--gray-200);
+    overflow: hidden;
+    @media (min-width: $lg-min) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+        margin: 96px auto;
+    }
+    .content {
+        padding: 24px;
+        @media (min-width: $lg-min) {
+            padding: 48px 48px 48px 0;
+        }
+        @media (min-width: $xl-min) {
+            padding: 96px 96px 96px 0;
+        }
+        h2 {
+            color: var(--primary);
+        }
+    }
+    
+    img {
+        z-index: -1;
+        align-self: end;
+        margin-top: -24px;
+        padding-right: 24px;
+        @media (min-width: $sm-min) {
+            padding-right: 48px;
+        }
+        @media (min-width: $lg-min) {
+            order: -1;
+            height: 100%;
+            padding-top: 48px;
+            padding-right: 0;
+        }
+        @media (min-width: $lg-min) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top right;
+        }
+    }
+}
