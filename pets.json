@@ -3,84 +3,84 @@
         "name": "Fred",
         "type": "kot",
         "opis": "puchata czarno - biała kulka",
-        "img": "./img/pets/cat-bw.jpg"
+        "img": "./img/pets/cat-bw.webp"
     },
     {
         "name": "Ciapek",
         "type": "pies",
         "opis": "spokojny i lubi się ślinić", 
-        "img": "./img/pets/ciapek.jpg"
+        "img": "./img/pets/ciapek.webp"
     },
     {
         "name": "Klusek",
         "type": "pies",
         "opis": "flegmatyczny, lubi się przytulac i spać", 
-        "img": "./img/pets/klusek.jpg"
+        "img": "./img/pets/klusek.webp"
     },
     {
         "name": "Lucyna",
         "type": "kot",
         "opis": "płochliwa, lubi się wygrzewać w słońcu", 
-        "img": "./img/pets/lucyna.jpg"
+        "img": "./img/pets/lucyna.webp"
     },
     {
         "name": "George",
         "type": "kot",
         "opis": "lubi się miziać, często miauczy", 
-        "img": "./img/pets/george.jpg"
+        "img": "./img/pets/george.webp"
     },
     {
         "name": "Śnieżka",
         "type": "pies",
         "opis": "wyszczekana starsza pani", 
-        "img": "./img/pets/sniezka.jpg"
+        "img": "./img/pets/sniezka.webp"
     },
     {
         "name": "Reksio",
         "type": "pies",
         "opis": "towarzyski, radosny psiak",
-        "img": "./img/pets/reksio.jpg"
+        "img": "./img/pets/reksio.webp"
     },
     {
         "name": "Fiona",
         "type": "pies",
         "opis": "spokojna kilkuletnia suczka, cicha i tulaśna",
-        "img": "./img/pets/fiona.jpg"
+        "img": "./img/pets/fiona.webp"
     },
     {
         "name": "Tuptuś",
         "type": "pies",
         "opis": "lubi aportować, łasuch jakich mało",
-        "img": "./img/pets/tuptus.jpg"
+        "img": "./img/pets/tuptus.webp"
     },
     {
         "name": "Szeryf",
         "type": "pies",
         "opis": "Szef psiaków, towarzyski i wygadany, wszedzie go pełno",
-        "img": "./img/pets/szeryf.jpg"
+        "img": "./img/pets/szeryf.webp"
     },
     {
         "name": "Olaf",
         "type": "kot",
         "opis": "przyczajony tygrys, prawie ukryty smok",
-        "img": "./img/pets/olaf.jpg"
+        "img": "./img/pets/olaf.webp"
     },
     {
         "name": "Grażyna",
         "type": "pies",
         "opis": "lojalna, pocieszna psinka uwielbiająca aportować",
-        "img": "./img/pets/grazyna.jpg"
+        "img": "./img/pets/grazyna.webp"
     },
     {
         "name": "Benio",
         "type": "pies",
         "opis": "flegmatyczny i majestatyczny",
-        "img": "./img/pets/benio.jpg"
+        "img": "./img/pets/benio.webp"
     },
     {
         "name": "Bella",
         "type": "pies",
         "opis": "dynamiczna psia dama",
-        "img": "./img/pets/bella.jpg"
+        "img": "./img/pets/bella.webp"
     }
 ]}
