@@ -154,8 +154,8 @@ header .header__gold .header__links a {
   text-decoration: none;
 }
 header .header__gold .header__links svg {
-  width: 21px;
-  height: 21px;
+  width: 18px;
+  height: 18px;
 }
 header .header__gold .header__links .header__links__accountNum {
   text-align: center;
@@ -299,9 +299,12 @@ header .nav__menu {
 header .nav__menu li {
   font-size: 18px;
 }
-header .nav__menu a {
+header .nav__menu li a {
   color: var(--gray-900);
   text-decoration: none;
+}
+header .nav__menu li.active a {
+  color: var(--primary);
 }
 header .nav__menu.show {
   display: -webkit-box;

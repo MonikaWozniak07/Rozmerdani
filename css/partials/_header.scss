@@ -20,8 +20,8 @@ header {
                 text-decoration: none;
             }
             svg {
-                width: 21px;
-                height: 21px;
+                width: 18px;
+                height: 18px;
             }
             .header__links__accountNum {
                 text-align: center;
@@ -128,10 +128,13 @@ header {
         }
         li {
             font-size: 18px;
-        }
-        a {
-            color: var(--gray-900);
-            text-decoration: none;
+            a {
+                color: var(--gray-900);
+                text-decoration: none;
+            }
+            &.active a {
+                color: var(--primary);
+            }
         }
         &.show {
             display: flex;
