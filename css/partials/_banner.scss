@@ -1,0 +1,61 @@
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 160px;
+    padding-block: 48px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    @media (min-width: $lg-min) {
+        min-height: 280px;
+        padding-block: 96px;
+    }
+    @media (min-width: $xl-min) {
+        min-height: 320px;
+    }
+    .banner__wrapper {
+        width: min(85%, 1320px);
+        margin-inline: auto;
+    }
+    .banner__title {
+        position: relative;
+        display: inline-block;
+        color: var(--white);
+        z-index: 1;
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            @media (min-width: $lg-min) {
+                font-size: 48px;
+            }
+            @media (min-width: $xl-min) {
+                font-size: 72px;
+            }
+        }
+        span {
+            font-weight: 400;
+        }
+    }
+    .banner__circle {
+        position: absolute;
+        top: 50%;
+        left: -20%;
+        z-index: -1;
+        width: 140%;
+        border-radius: 100%;
+        background: var(--primary);
+        opacity: 70%;
+        translate: 0 -50%;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

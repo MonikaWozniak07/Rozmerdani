@@ -1,0 +1,22 @@
+@import 'partials/variables';
+@import 'partials/main';
+// @import 'partials/btn';
+
+@import 'partials/header';
+@import 'partials/footer';
+
+@import 'partials/banner';
+
+.team {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 24px;
+    width: min(85%, 1320px);
+    margin: 48px auto;
+    @media (min-width: $lg-min) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+        margin: 96px auto;
+    }
+}
