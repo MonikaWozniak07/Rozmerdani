@@ -1,3 +1,13 @@
+@import 'partials/variables';
+@import 'partials/main';
+@import 'partials/btn';
+
+@import 'partials/header';
+@import 'partials/footer';
+
+@import 'partials/banner';
+@import 'partials/section__help';
+
 .section__half {
     display: grid;
     grid-template-columns: 1fr;
