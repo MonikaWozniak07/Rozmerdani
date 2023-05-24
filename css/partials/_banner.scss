@@ -2,17 +2,19 @@
     position: relative;
     display: flex;
     align-items: center;
+    min-height: 150px;
+    padding: 50px 0;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    min-height: 150px;
     @media (min-width: $lg-min) {
         min-height: 260px;
+        padding: 100px 0;
     }
     @media (min-width: $xl-min) {
         min-height: 300px;
     }
-    &_title {
+    .banner__title {
         position: relative;
         display: inline-block;
         color: var(--white);
@@ -31,7 +33,7 @@
             font-weight: 400;
         }
     }
-    &_circle {
+    .banner__circle {
         position: absolute;
         top: 50%;
         left: -20%;

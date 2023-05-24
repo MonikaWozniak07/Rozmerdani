@@ -678,14 +678,16 @@ button:not(:disabled) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 150px;
+  padding: 50px 0;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  min-height: 150px;
 }
 @media (min-width: 900px) {
   .banner {
     min-height: 260px;
+    padding: 100px 0;
   }
 }
 @media (min-width: 1200px) {
@@ -693,30 +695,30 @@ button:not(:disabled) {
     min-height: 300px;
   }
 }
-.banner_title {
+.banner .banner__title {
   position: relative;
   display: inline-block;
   color: var(--white);
   z-index: 1;
 }
-.banner_title h1 {
+.banner .banner__title h1 {
   margin: 0;
   font-size: 36px;
 }
 @media (min-width: 900px) {
-  .banner_title h1 {
+  .banner .banner__title h1 {
     font-size: 48px;
   }
 }
 @media (min-width: 1200px) {
-  .banner_title h1 {
+  .banner .banner__title h1 {
     font-size: 72px;
   }
 }
-.banner_title span {
+.banner .banner__title span {
   font-weight: 400;
 }
-.banner_circle {
+.banner .banner__circle {
   position: absolute;
   top: 50%;
   left: -20%;
@@ -728,12 +730,12 @@ button:not(:disabled) {
           transform: translateY(-50%);
   z-index: -1;
 }
-.banner_circle:after {
+.banner .banner__circle:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.banner_circle .content {
+.banner .banner__circle .content {
   position: absolute;
   width: 100%;
   height: 100%;
