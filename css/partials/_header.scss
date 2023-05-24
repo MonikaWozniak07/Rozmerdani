@@ -1,4 +1,8 @@
 header {
+    .header__wrapper {
+        width: min(85%, 1320px);
+        margin-inline: auto;
+    }
     .header__gold {
         background-color: var(--primary);
         color: var(--white);

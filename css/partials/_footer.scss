@@ -1,13 +1,15 @@
 footer {
-    padding: 48px 0;
+    padding-block: 48px;
     font-size: 12px;
     background: var(--gray-100);
     color: var(--gray-550);
     text-align: center;
     @media (min-width: $lg-min) {
-        padding: 96px 0;
+        padding-block: 96px;
     }
-    .container {
+    .footer__wrapper {
+        width: min(85%, 1320px);
+        margin-inline: auto;
         @media (min-width: $lg-min) {
             display: flex;
             justify-content: space-between;

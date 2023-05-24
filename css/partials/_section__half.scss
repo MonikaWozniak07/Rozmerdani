@@ -6,11 +6,12 @@
     grid-auto-flow: row;
     align-items: center;
     width: min(85%, 1320px);
-    margin: 50px auto;
+    margin: 48px auto;
     grid-auto-flow: dense;
     @media (min-width: $lg-min) {
         grid-template-columns: repeat(2, 1fr);
         gap: 48px 48px;
+        margin: 96px auto;
         
     }
     img {
@@ -34,9 +35,12 @@
         margin-bottom: 0;
         align-items: end;
         .content {
-            margin-bottom: 50px;
+            align-self: center;
+            @media (min-width: $sm-min) {
+                margin-bottom: 48px;
+            }
             @media (min-width: $lg-min) {
-                margin-bottom: 100px;
+                margin-bottom: 96px;
             }
         }
     }
