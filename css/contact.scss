@@ -6,4 +6,62 @@
 @import 'partials/footer';
 
 @import 'partials/banner';
+@import 'partials/form';
 // @import 'partials/section__help';
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 24px;
+    width: min(85%, 1320px);
+    margin: 48px auto 0;
+    @media (min-width: $lg-min) {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin: 96px auto 0;
+    }
+    @media (min-width: $xl-min) {
+        grid-template-columns: 3fr 2fr;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        @media (min-width: $lg-min) {
+            align-self: center;
+            margin-block: 0 96px;
+        }
+        .content__icon {
+            text-align: center;
+        }
+        svg {
+            width: 64px;
+        }
+        a {
+            color: var(--gray-900);
+            text-decoration: none;
+        }
+    }
+    img {
+        align-self: end;
+        margin: 0 auto;
+        max-width: 70%;
+        max-height: 35vh;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    strong  {
+        text-align: center;
+    }
+}

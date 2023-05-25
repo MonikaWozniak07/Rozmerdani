@@ -1,6 +1,6 @@
 @import 'partials/variables';
 @import 'partials/main';
-@import 'partials/btn';
+// @import 'partials/btn';
 
 @import 'partials/header';
 @import 'partials/footer';
@@ -30,9 +30,8 @@ main {
         grid-template-columns: 3fr 2fr;
     }
     .content {
-        align-self: center;
-        margin-block: 0 48px;
         @media (min-width: $lg-min) {
+            align-self: center;
             margin-block: 0 96px;
         }
     }
