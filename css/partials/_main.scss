@@ -17,6 +17,10 @@ body {
     overflow-y: scroll;
 }
 
+main {
+    flex: 1;
+}
+
 h6, .h6,
 h5, .h5,
 h4, .h4,
